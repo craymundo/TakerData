@@ -1,0 +1,67 @@
+﻿@using Microsoft.AspNetCore.Http;
+@using WebTakerData.Models.Api.Menus;
+@{
+    string nameUsuario = ViewBag.NombreUsuarioBienvenida ?? "";
+    string namePerfil = ViewBag.PerfilDescripcion ?? "";
+
+    var ListaMenu = (List<Menu>)ViewBag.ListaMenu ?? new List<Menu>();
+    var menus = ListaMenu.Where(p => p.MenuPadreId == 0).OrderBy(p => p.Orden).ToList();
+    if (ListaMenu.Count() == 0)
+    {
+
+    }
+}
+
+<nav class="navbar-default navbar-static-side fondo_navbar" role="navigation">
+    <div class="sidebar-collapse">
+        <ul class="nav metismenu" id="side-menu">
+            <li class="nav-header">
+                <div class="dropdown profile-element text-center">
+                  
+                   
+                    <img alt="image" class="rounded-circle " src="~/imagen/user.png" style="width:98px;height:98px;border: 3px white solid;" />
+                    <a  class="dropdown-toggle" href="#">
+                        <span class="block m-t-xs font-bold lblUsuario" style="color:white">@nameUsuario</span>
+                      
+                    </a>
+                   
+                </div>
+                <div class="logo-element">
+                    
+                </div>
+            </li>
+
+            @functions
+            {
+                public string CrearMenu(Menu menu, List<Menu> accesomenu, int i = 0)
+                {
+                    string query_html = "";
+                    Menu m = (Menu)menu;
+
+                    if (accesomenu.Where(x => x.MenuPadreId == m.MenuId).Count() > 0)
+                    {
+                        string lvl = i == 0 ? "nav-second-level" : "nav-third-level";
+
+                        query_html += $"<li><a href='#' class='lblmenu'><i class='fa {m.Icono}'></i><span class='nav-label' data-i18n='nav.{m.Descripcion.Replace(" ", ".")}'>{m.Descripcion} </span><span class='fa arrow'></span></a>" +
+                            $"<ul class='nav {lvl}'>" +
+                            $"{string.Join("", accesomenu.Where(x => x.MenuPadreId == m.MenuId).Select(c => CrearMenu(c, accesomenu, i + 1)))} </ul></li>";
+                    }
+                    else
+                    {
+                        if (m.Area.Length == 0)
+                            query_html = $"<li><a class='lblmenu' href='{Url.Action(m.Accion, m.Controlador)}' ><i class='fa {m.Icono}'></i> <span class='nav-label'>{m.Descripcion}</span></a></li>";
+                        else
+                            query_html = $"<li><a class='lblmenu' href='{Url.Action(m.Accion, m.Controlador, new { Area = m.Area })}' ><i class='fa {m.Icono}'></i> <span class='nav-label'>{m.Descripcion}</span></a></li>";
+                    }
+                    return query_html;
+                }
+            }
+
+            @foreach (var item in menus)
+            {
+                @Html.Raw(CrearMenu(item, ListaMenu));
+            }
+        </ul>
+    </div>
+    @*<img src="~/imagen/fondo_navbar.svg" class="imagen_navbar" />*@
+</nav>

@@ -1,0 +1,134 @@
+﻿@inject WebTakerData.Interface.ICore.IServices AppService;
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Taker Data </title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Security-Policy" content="img-src 'self' data: *;" />
+  
+    <link runat="server" rel="shortcut icon" href="~/favicon.ico" type="image/x-icon" />
+    <link runat="server" rel="icon" href="~/favicon.ico" type="image/ico" />
+    <environment names="Development">
+        <link href="~/lib/bootstrap/4.3.1/dist/css/bootstrap.css" rel="stylesheet" />
+        <link href="~/lib/fonts/font-awesome/css/font-awesome.css" rel="stylesheet" />
+        <link href="~/lib/fonts/font-awesome-Open-Sans/css/font-awesome.css" rel="stylesheet" />
+        <link href="~/lib/fonts/font-awesome-Roboto/css/font-awesome.css" rel="stylesheet" />
+        <link href="~/lib/datatable/dist/css/datatables.css" rel="stylesheet" />
+        <link href="~/lib/jquery.msg/dist/css/jquery.msg.css" rel="stylesheet" />
+        <link href="~/lib/sweet-alert/v2/dist/css/sweetalert.css" rel="stylesheet" />
+        <link href="~/lib/toastr/v2/dist/css/toastr.css" rel="stylesheet" />
+        <link href="~/lib/select2/dist/css/select2.css" rel="stylesheet" />
+        <link href="~/lib/inspinia/dist/css/animate.css" rel="stylesheet" />
+        <link href="~/lib/inspinia/dist/css/style.css" rel="stylesheet" />
+        <link href="~/lib/dropzone/v2/dist/css/basic.css" rel="stylesheet">
+        <link href="~/lib/dropzone/v2/dist/css/dropzone.css" rel="stylesheet">
+        <link href="~/lib/awesome-bootstrap-checkbox/dist/css/awesome-bootstrap-checkbox.css" rel="stylesheet" />
+        <link href="~/lib/iCheck/dist/css/custom.css" rel="stylesheet" />
+      
+    </environment>
+    <environment names="Production">
+        <link href="~/lib/bootstrap/4.3.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="~/lib/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+        <link href="~/lib/fonts/font-awesome-Open-Sans/css/font-awesome.min.css" rel="stylesheet" />
+        <link href="~/lib/fonts/font-awesome-Roboto/css/font-awesome.min.css" rel="stylesheet" />
+        <link href="~/lib/datatable/dist/css/datatables.min.css" rel="stylesheet" />
+        <link href="~/lib/jquery.msg/dist/css/jquery.msg.min.css" rel="stylesheet" />
+        <link href="~/lib/sweet-alert/v2/dist/css/sweetalert.min.css" rel="stylesheet" />
+        <link href="~/lib/toastr/v2/dist/css/toastr.min.css" rel="stylesheet" />
+        <link href="~/lib/select2/dist/css/select2.min.css" rel="stylesheet" />
+        <link href="~/lib/inspinia/dist/css/animate.min.css" rel="stylesheet" />
+        <link href="~/lib/inspinia/dist/css/style.min.css" rel="stylesheet" />
+        <link href="~/lib/dropzone/v2/dist/css/basic.min.css" rel="stylesheet">
+        <link href="~/lib/dropzone/v2/dist/css/dropzone.min.css" rel="stylesheet">
+        <link href="~/lib/awesome-bootstrap-checkbox/dist/css/awesome-bootstrap-checkbox.min.css" rel="stylesheet" />
+        <link href="~/lib/iCheck/dist/css/custom.css" rel="stylesheet" />
+       
+    </environment>
+</head>
+<body>
+    <!-- Skin configuration box -->
+    @*@Html.Partial("_SkinConfigExtranet")*@
+    <!-- Wrapper-->
+    <div id="wrapper" class="Home">
+        <!-- Navigation -->
+        @Html.Partial("_NavigationExtranet")
+        <!-- Page wraper -->
+        <div id="page-wrapper" class="gray-bg @ViewBag.SpecialClass">
+
+            <!-- Top Navbar -->
+            @Html.Partial("_TopNavbarExtranet")
+
+            <!-- Main view  -->
+            @RenderBody()
+
+            <!-- Footer -->
+            @Html.Partial("_FooterExtranet")
+
+        </div>
+        <!-- End page wrapper-->
+        <!-- Right Sidebar -->
+        @*@Html.Partial("_RightSidebarExtranet")*@
+    </div>
+    <!-- End wrapper-->
+
+    <input type="hidden" id="hdapi" value="@AppService.Api" readonly="readonly" disabled="disabled" />
+    <input type="hidden" id="hdncodigousuario" value="@ViewBag.CodigoUsuario" readonly="readonly" disabled="disabled" />
+    <input type="hidden" id="hdnconecciontoken" value="@ViewBag.ConeccionToken" readonly="readonly" disabled="disabled" />
+
+    <environment names="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/Popper/dist/js/popper.js"></script>
+        <script src="~/lib/jquery-validation/dist/js/jquery.validate.js"></script>
+        <script src="~/lib/jquery-validation/dist/js/additional-methods.js"></script>
+        <script src="~/lib/bootstrap/4.3.1/dist/js/bootstrap.js"></script>
+        <script src="~/lib/Popper/dist/js/popper.min.js"></script>
+        <script src="~/lib/metisMenu/dist/js/jquery.metisMenu.js"></script>
+        <script src="~/lib/slimScroll/jquery.slimscroll.js"></script>
+        <script src="~/lib/pace/dist/js/pace.js"></script>
+        <script src="~/lib/datatable/dist/js/datatables.js"></script>
+        <script src="~/lib/jquery.msg/dist/js/jquery.center.js"></script>
+        <script src="~/lib/jquery.msg/dist/js/jquery.msg.js"></script>
+        <script src="~/lib/sweet-alert/v2/dist/js/sweetalert.js"></script>
+        <script src="~/lib/toastr/v2/dist/js/toastr.js"></script>
+        <script src="~/lib/select2/dist/js/select2.js"></script>
+        <script src="~/js/Base/conexion.js"></script>
+        <script src="~/js/Base/model.js"></script>
+        <script src="~/js/Base/controller.js"></script>
+        <script src="~/js/Base/coreajax.js"></script>
+        <script src="~/lib/dropzone/v2/dist/js/dropzone.js"></script>
+        <script src="~/lib/inspinia/dist/js/script.js" asp-append-version="true"></script>
+        <script src="~/lib/inspinia/dist/js/skin.config.js"></script>
+        <script src="https://raw.githack.com/SortableJS/Sortable/master/Sortable.js"></script>
+        <script src="~/lib/iCheck/dist/js/icheck.min.js"></script>
+    </environment>
+    <environment names="Staging,Production">
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/Popper/dist/js/popper.min.js"></script>
+        <script src="~/lib/jquery-validation/dist/js/jquery.validate.min.js"></script>
+        <script src="~/lib/jquery-validation/dist/js/additional-methods.min.js"></script>
+        <script src="~/lib/bootstrap/4.3.1/dist/js/bootstrap.min.js"></script>
+        <script src="~/lib/Popper/dist/js/popper.min.js"></script>
+        <script src="~/lib/metisMenu/dist/js/jquery.metisMenu.min.js"></script>
+        <script src="~/lib/slimScroll/jquery.slimscroll.min.js"></script>
+        <script src="~/lib/pace/dist/js/pace.min.js"></script>
+        <script src="~/lib/datatable/dist/js/datatables.min.js"></script>
+        <script src="~/lib/jquery.msg/dist/js/jquery.center.min.js"></script>
+        <script src="~/lib/jquery.msg/dist/js/jquery.msg.min.js"></script>
+        <script src="~/lib/sweet-alert/v2/dist/js/sweetalert.min.js"></script>
+        <script src="~/lib/toastr/v2/dist/js/toastr.min.js"></script>
+        <script src="~/lib/select2/dist/js/select2.min.js"></script>
+        <script src="~/js/Base/conexion.min.js"></script>
+        <script src="~/js/Base/model.min.js"></script>
+        <script src="~/js/Base/controller.js"></script>
+        <script src="~/js/Base/coreajax.min.js"></script>
+        <script src="~/lib/dropzone/v2/dist/js/dropzone.min.js"></script>
+        <script src="~/lib/inspinia/dist/js/script.min.js" asp-append-version="true"></script>
+        <script src="~/lib/inspinia/dist/js/skin.config.min.js" asp-append-version="true"></script>
+        <script src="https://raw.githack.com/SortableJS/Sortable/master/Sortable.js"></script>
+        <script src="~/lib/iCheck/dist/js/icheck.min.js"></script>
+    </environment>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

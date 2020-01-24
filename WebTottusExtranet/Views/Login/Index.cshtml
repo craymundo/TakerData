@@ -1,0 +1,87 @@
+﻿@model WebTakerData.Models.Login.LoginModel;
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link runat="server" rel="shortcut icon" href="~/favicon.ico" type="image/x-icon" />
+    <link runat="server" rel="icon" href="~/favicon.ico" type="image/ico" />
+    <title>Taker Data | Login</title>
+    <environment names="Development">
+        <link href="~/lib/bootstrap/4.3.1/dist/css/bootstrap.css" rel="stylesheet" />
+        <link href="~/lib/fonts/font-awesome/css/font-awesome.css" rel="stylesheet" />
+        <link href="~/lib/fonts/font-awesome-Open-Sans/css/font-awesome.css" rel="stylesheet" />
+        <link href="~/lib/fonts/font-awesome-Roboto/css/font-awesome.css" rel="stylesheet" />
+        <link href="~/lib/inspinia/dist/css/animate.css" rel="stylesheet" />
+        <link href="~/lib/inspinia/dist/css/style.css" rel="stylesheet" />
+        <link href="~/lib/inspinia/dist/css/login.css" rel="stylesheet" />
+    </environment>
+    <environment names="Production">
+        <link href="~/lib/bootstrap/4.3.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="~/lib/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+        <link href="~/lib/fonts/font-awesome-Open-Sans/css/font-awesome.min.css" rel="stylesheet" />
+        <link href="~/lib/fonts/font-awesome-Roboto/css/font-awesome.min.css" rel="stylesheet" />
+        <link href="~/lib/inspinia/dist/css/animate.min.css" rel="stylesheet" />
+        <link href="~/lib/inspinia/dist/css/style.min.css" rel="stylesheet" />
+        <link href="~/lib/inspinia/dist/css/login.min.css" rel="stylesheet" />
+    </environment>
+    <style>
+    </style>
+
+</head>
+
+<body class="gray-bg">
+
+    <div class="middle-box text-center loginscreen animated fadeInDown">
+        <div>
+            <div>
+
+                <h1 class="logo-name">IN+</h1>
+
+            </div>
+            <h3>Bienvenido a Web Taker Data</h3>
+
+            <p>Control de Acceso</p>
+            <form class="m-t form_login" asp-action="Index" asp-controller="Login"
+                  method="post" asp-antiforgery="true" autocomplete="off" asp-route-returnurl="@Model.ReturnUrl">
+                <div class="form-group">
+                    <input asp-for="CodigoUsuario" class="form-control" autocomplete="off" placeholder="Usuario" autofocus="">
+                    <span asp-validation-for="CodigoUsuario" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <input asp-for="ClaveSecreta" class="form-control" autocomplete="new-password" placeholder="Contraseña" />
+                    <span asp-validation-for="ClaveSecreta" class="text-danger"></span>
+                </div>
+                <button type="submit" class="btn btn-primary btn-login">Ingresar</button>
+                <label>@Model.Mensaje</label>
+
+
+            </form>
+            <p class="m-t">  </p>
+        </div>
+    </div>
+
+    <environment names="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/Popper/dist/js/popper.js"></script>
+        <script src="~/lib/bootstrap/4.3.1/dist/js/bootstrap.js"></script>
+     
+    </environment>
+
+    <environment names="Production">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/Popper/dist/js/popper.js"></script>
+        <script src="~/lib/bootstrap/4.3.1/dist/js/bootstrap.js"></script>
+    </environment>
+
+</body>
+
+</html>
+

@@ -1,0 +1,6 @@
+2020-01-19T01:55:35.6458536-05:00 0HLSSLIAM165G:00000001 [ERR] ObtenerUsuarioActual vacio (dd0b25da)
+System.InvalidOperationException: ObtenerUsuarioActual vacio
+2020-01-19T01:55:54.9331179-05:00 0HLSSLIAM165F:00000004 [ERR] ObtenerUsuarioActual vacio (dd0b25da)
+System.InvalidOperationException: ObtenerUsuarioActual vacio
+2020-01-19T02:01:34.6915301-05:00 0HLSSLLLL1IAE:00000001 [ERR] ObtenerUsuarioActual vacio (dd0b25da)
+System.InvalidOperationException: ObtenerUsuarioActual vacio

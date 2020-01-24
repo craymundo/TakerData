@@ -1,0 +1,134 @@
+﻿@font-face {
+    font-family: 'fontfabric - intro bold alt';
+    src: url('../../../../fonts/fontintro/fontfabric - intro bold alt.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'fontfabric - intro light alt';
+    src: url('../../../../fonts/fontintro/fontfabric - intro light alt.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'fontfabric - intro regular alt';
+    src: url('../../../../fonts/fontintro/fontfabric - intro regular alt.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'fontfabric - intro-black-alt_1';
+    src: url('../../../../fonts/fontintro/fontfabric - intro-black-alt_1.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'fontfabric - intro-bold-alt';
+    src: url('../../../../fonts/fontintro/fontfabric - intro-bold-alt.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'fontfabric - intro-regular-alt';
+    src: url('../../../../fonts/fontintro/fontfabric - intro-regular-alt.otf') format('opentype');
+}
+
+
+@font-face {
+    font-family: 'fontfabric - intro-thin-alt';
+    src: url('../../../../fonts/fontintro/fontfabric - intro-thin-alt.otf') format('opentype');
+}
+
+@font-face {
+    font-family: 'raleway-bold';
+    src: url('../../../../fonts/ralewayfont/raleway-bold.ttf') format('truetype');
+}
+
+.login,
+.image {
+    min-height: 100vh
+}
+
+.bg-image {
+    min-height: 300px;
+}
+
+.titulo_login {
+    font-family: 'fontfabric - intro bold alt';
+    font-size: 34px;
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #979caf;
+    margin-bottom:0px;
+}
+
+
+.bg-tottus {
+    background-color: #f5f6fa;
+}
+
+.btn-login {
+    float: right !important;
+    padding: 10px 35px !important;
+    font-family: 'fontfabric - intro bold alt';
+    font-size: 16px;
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #ffffff;
+    border-radius: 8px !important;
+    box-shadow: 2px 2px 2px #e5e6e7;
+}
+
+.form_login {
+    margin-top: 0px!important;
+}
+
+.display-4-login {
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+.input-form-login {
+    border-radius: 8px !important;
+    font-family: 'raleway-bold';
+    font-size: 14px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #cccfdd;
+    height: 41px !important;
+    box-shadow: 2px 2px 2px #e5e6e7;
+    border: 0px;
+}
+
+
+
+
+
+.logo-login {
+    position: relative;
+    width: 200px;
+    z-index: 99999;
+    left: -100px;
+    top: -100px;
+}
+
+.login-imagen {
+    width: 89%;
+    height: 100%;
+    z-index: 999999;
+    position: absolute;
+    left: 5%
+}
+
+@media (max-width: 500px) {
+    .logo-login {
+       
+        left: 0px;
+       
+    }
+}

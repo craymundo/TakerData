@@ -1,0 +1,12 @@
+2020-01-17T00:24:48.0618792-05:00 0HLSR1M8PEUA5:00000001 [ERR] ObtenerUsuarioActual vacio (dd0b25da)
+System.InvalidOperationException: ObtenerUsuarioActual vacio
+2020-01-17T00:24:49.7915137-05:00 0HLSR1M8PEUA6:00000003 [ERR] ObtenerUsuarioActual vacio (dd0b25da)
+System.InvalidOperationException: ObtenerUsuarioActual vacio
+2020-01-17T00:36:41.7689164-05:00 0HLSR1STEGF3A:00000001 [ERR] ObtenerUsuarioActual vacio (dd0b25da)
+System.InvalidOperationException: ObtenerUsuarioActual vacio
+2020-01-17T00:47:41.1219552-05:00 0HLSR231VSTT2:00000001 [ERR] ObtenerUsuarioActual vacio (dd0b25da)
+System.InvalidOperationException: ObtenerUsuarioActual vacio
+2020-01-17T00:59:24.1396507-05:00 0HLSR29JDM50P:00000001 [ERR] ObtenerUsuarioActual vacio (dd0b25da)
+System.InvalidOperationException: ObtenerUsuarioActual vacio
+2020-01-17T01:59:18.5207475-05:00 0HLSR3B2M1QE0:00000001 [ERR] ObtenerUsuarioActual vacio (dd0b25da)
+System.InvalidOperationException: ObtenerUsuarioActual vacio

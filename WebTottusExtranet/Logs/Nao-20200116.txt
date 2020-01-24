@@ -1,0 +1,28 @@
+2020-01-16T15:44:28.0106925-05:00 0HLSQOJGG1M24:00000001 [ERR] ObtenerUsuarioActual vacio (dd0b25da)
+System.InvalidOperationException: ObtenerUsuarioActual vacio
+2020-01-16T16:16:39.1075395-05:00 0HLSQP5G14R8O:00000001 [ERR] ObtenerUsuarioActual vacio (dd0b25da)
+System.InvalidOperationException: ObtenerUsuarioActual vacio
+2020-01-16T16:18:06.0004378-05:00 0HLSQP69TO2LR:00000001 [ERR] ObtenerUsuarioActual vacio (dd0b25da)
+System.InvalidOperationException: ObtenerUsuarioActual vacio
+2020-01-16T16:19:04.1631448-05:00 0HLSQP6RAUP9S:00000001 [ERR] ObtenerUsuarioActual vacio (dd0b25da)
+System.InvalidOperationException: ObtenerUsuarioActual vacio
+2020-01-16T17:07:25.2541934-05:00 0HLSQQ1RR9E5R:00000001 [ERR] ObtenerUsuarioActual vacio (dd0b25da)
+System.InvalidOperationException: ObtenerUsuarioActual vacio
+2020-01-16T18:00:20.7636617-05:00 0HLSQQVE79EF3:00000001 [ERR] ObtenerUsuarioActual vacio (dd0b25da)
+System.InvalidOperationException: ObtenerUsuarioActual vacio
+2020-01-16T18:02:55.7231853-05:00 0HLSQR0SDKCGV:00000001 [ERR] ObtenerUsuarioActual vacio (dd0b25da)
+System.InvalidOperationException: ObtenerUsuarioActual vacio
+2020-01-16T21:13:36.8084031-05:00 0HLSQUBE2RD0C:00000001 [ERR] ObtenerUsuarioActual vacio (dd0b25da)
+System.InvalidOperationException: ObtenerUsuarioActual vacio
+2020-01-16T21:24:10.8763536-05:00 0HLSQUHB22OIQ:00000001 [ERR] ObtenerUsuarioActual vacio (dd0b25da)
+System.InvalidOperationException: ObtenerUsuarioActual vacio
+2020-01-16T23:01:28.1823063-05:00 0HLSR07MMLP7M:00000001 [ERR] ObtenerUsuarioActual vacio (dd0b25da)
+System.InvalidOperationException: ObtenerUsuarioActual vacio
+2020-01-16T23:34:25.7513459-05:00 0HLSR0PUO0VG7:00000003 [ERR] ObtenerUsuarioActual vacio (dd0b25da)
+System.InvalidOperationException: ObtenerUsuarioActual vacio
+2020-01-16T23:46:02.1689956-05:00 0HLSR10I4TU7V:00000002 [ERR] ObtenerUsuarioActual vacio (dd0b25da)
+System.InvalidOperationException: ObtenerUsuarioActual vacio
+2020-01-16T23:55:20.3034912-05:00 0HLSR15PUI9T3:00000001 [ERR] ObtenerUsuarioActual vacio (dd0b25da)
+System.InvalidOperationException: ObtenerUsuarioActual vacio
+2020-01-16T23:55:22.9686666-05:00 0HLSR15PUI9T4:00000003 [ERR] ObtenerUsuarioActual vacio (dd0b25da)
+System.InvalidOperationException: ObtenerUsuarioActual vacio

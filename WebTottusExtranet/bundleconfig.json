@@ -1,0 +1,77 @@
+[
+  {
+    "outputFileName": "wwwroot/js/base/core.min.js",
+    "inputFiles": [
+      "wwwroot/js/base/core.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/Base/conexion.min.js",
+    "inputFiles": [
+      "wwwroot/js/Base/conexion.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/Base/controller.min.js",
+    "inputFiles": [
+      "wwwroot/js/Base/controller.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/Base/coreajax.min.js",
+    "inputFiles": [
+      "wwwroot/js/Base/coreajax.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/Base/model.min.js",
+    "inputFiles": [
+      "wwwroot/js/Base/model.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/lib/dropzone/v2/dist/css/basic.min.css",
+    "inputFiles": [
+      "wwwroot/lib/dropzone/v2/dist/css/basic.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/lib/dropzone/v2/dist/css/dropzone.min.css",
+    "inputFiles": [
+      "wwwroot/lib/dropzone/v2/dist/css/dropzone.css"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/lib/dropzone/v2/dist/js/dropzone.min.js",
+    "inputFiles": [
+      "wwwroot/lib/dropzone/v2/dist/js/dropzone.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/js/Area/Views/InformacionTienda.min.js",
+    "inputFiles": [
+      "wwwroot/js/Area/Views/InformacionTienda.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/bundle/js/matenenimientolocales.js",
+    "inputFiles": [
+      "wwwroot/lib/jquery/dist/jquery.js",
+      "wwwroot/js/Base/controller.js",
+      "wwwroot/js/Base/coreajax.js",
+      "wwwroot/js/Area/Views/FormsGenerator.js"
+    ]
+  },
+  //{
+  //  "outputFileName": "wwwroot/bundle/js/matenenimientolocales.min.js",
+  //  "inputFiles": [
+  //    "wwwroot/bundle/js/matenenimientolocales.js"
+  //  ]
+  //},
+  {
+    "outputFileName": "wwwroot/lib/bootstrap/4.3.1/dist/css/bootstrap.min.css",
+    "inputFiles": [
+      "wwwroot/lib/bootstrap/4.3.1/dist/css/bootstrap.css"
+    ]
+  }
+]
