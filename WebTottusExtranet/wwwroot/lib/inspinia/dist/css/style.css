@@ -5748,7 +5748,7 @@ body.mini-navbar.fixed-sidebar .logo-element {
   font-size: 26px;
 }
 .fist-item {
-  border-top: none !important;
+  /*border-top: none !important;*/
 }
 .statistic-box {
   margin-top: 40px;
@@ -9608,4 +9608,8 @@ body.md-skin {
 #div_rigth_contenido > li {
    padding-left:2%;
    padding-right:2%;
+}
+
+.hiddenButton {
+    display: none !important;
 }

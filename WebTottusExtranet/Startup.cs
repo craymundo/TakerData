@@ -101,8 +101,7 @@ namespace WebTakerData
             loggerFactory.AddFile("Logs/Nao-{Date}.txt", LogLevel.Error);
             app.UseCors("CorsPolicy");
 
-            //https://storage.googleapis.com/btot-cl-prd-webgestiontottus.appspot.com/chatbot/PRD/PE/LOCALES/00018.png
-
+          
             app.UseHsts(hsts => hsts.MaxAge(365).IncludeSubdomains());
             app.UseXfo(options => options.Deny());
             app.UseXContentTypeOptions();
@@ -121,7 +120,9 @@ namespace WebTakerData
                 .ScriptSources(s => s.Self().UnsafeEval())
                 .ScriptSources(s => s.Self().CustomSources("raw.githack.com"))
                 .FontSources(s => s.Self().CustomSources("fonts.googleapis.com"))
+                
             );
+            
             app.UseFileServer(new FileServerOptions
             {
                 FileProvider = new PhysicalFileProvider(

@@ -12,5 +12,7 @@ namespace WebTakerData.Controllers
         }
 
         public IActionResult Index() => View();
+
+      
     }
 }

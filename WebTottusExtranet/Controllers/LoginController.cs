@@ -96,31 +96,31 @@ namespace WebTakerData.Controllers
         }
 
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public async Task<IActionResult> Error()
-        {
-            await ExpireSession();
-            return await Task.Run(() => View("Error"));
-        }
+        //[ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        //public async Task<IActionResult> Error()
+        //{
+        //    await ExpireSession();
+        //    return await Task.Run(() => View("Error"));
+        //}
 
-        [HttpGet]
-        public async Task<IActionResult> Forbidden()
-        {
-            return await Task.Run(() => View());
-        }
+        //[HttpGet]
+        //public async Task<IActionResult> Forbidden()
+        //{
+        //    return await Task.Run(() => View());
+        //}
 
-        [HttpGet]
-        public async Task<IActionResult> LogOut()
-        {
-            await ExpireSession();
-            return await Task.Run(() => RedirectToAction("Index"));
-        }
+        //[HttpGet]
+        //public async Task<IActionResult> LogOut()
+        //{
+        //    await ExpireSession();
+        //    return await Task.Run(() => RedirectToAction("Index"));
+        //}
 
-        private async Task ExpireSession()
-        {
-            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-            HttpContext.Session.Clear();
-        }
+        //private async Task ExpireSession()
+        //{
+        //    await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+        //    HttpContext.Session.Clear();
+       // }
 
         private async Task GuardarClaimsSesion(string codigoUsuario, Usuario usuario, List<Menu> Menus)
         {

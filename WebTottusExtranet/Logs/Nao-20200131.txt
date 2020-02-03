@@ -1,0 +1,4 @@
+2020-01-31T11:51:53.1013809-05:00 0HLT6DNFN6PEG:00000001 [ERR] ObtenerUsuarioActual vacio (dd0b25da)
+System.InvalidOperationException: ObtenerUsuarioActual vacio
+2020-01-31T13:08:07.8120562-05:00 0HLT6F235G8R7:00000001 [ERR] ObtenerUsuarioActual vacio (dd0b25da)
+System.InvalidOperationException: ObtenerUsuarioActual vacio

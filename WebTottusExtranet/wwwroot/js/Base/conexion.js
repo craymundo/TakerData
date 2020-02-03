@@ -5,7 +5,7 @@ var query = function () {
     var hdapi = $("#hdapi").val();
     var hdncodigousuario = $("#hdncodigousuario").val();
     return {
-        titulo: 'Tottus Extranet',
+        titulo: 'TakerData Web',
         conexiontoken: hdnconecciontoken,
         codigousuario: hdncodigousuario,
         api: hdapi

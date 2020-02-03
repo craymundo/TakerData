@@ -5100,7 +5100,7 @@ body.mini-navbar.fixed-sidebar .logo-element {
     }
 
 .fist-item {
-    border-top: none !important;
+    /*border-top: none !important;*/
 }
 
 .statistic-box {

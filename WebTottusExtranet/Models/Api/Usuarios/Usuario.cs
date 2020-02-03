@@ -23,5 +23,7 @@ namespace WebTakerData.Models.Api.Usuarios
         public DateTime FechaCreacion       { get; set; }
         public DateTime FechaModificacion   { get; set; }
         public bool     Estado              { get; set; }
+
+        public string EmpresaId { get; set; }
     }
 }

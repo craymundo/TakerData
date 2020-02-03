@@ -13,6 +13,7 @@
             restriccion: "",
             valor1: "",
             valor2: "",
+            controlId: "",
            
         };
     };

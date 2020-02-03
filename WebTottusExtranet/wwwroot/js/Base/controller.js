@@ -1,6 +1,6 @@
 ﻿$(document).ready(function () {
 
-    var tituto = 'Tottus';
+    var tituto = 'TakerData';
 
     $.fn.values = function () {
         var obj = this;
@@ -258,12 +258,7 @@
             language: {
                 emptyTable: "No se encontraron registros",
                 zeroRecords: "",
-                "paginate": {
-                    "first": "<<", // This is the link to the first page
-                    "previous": "<", // This is the link to the previous page
-                    "next": ">", // This is the link to the next page
-                    "last": ">>" // This is the link to the last page
-                }
+              
             },
             lengthChange: false,
             ordering: false,
@@ -335,12 +330,7 @@
             language: {
                 emptyTable: "No se encontraron registros",
                 zeroRecords: "",
-                "paginate": {
-                    "first": "<<", // This is the link to the first page
-                    "previous": "<", // This is the link to the previous page
-                    "next": ">", // This is the link to the next page
-                    "last": ">>" // This is the link to the last page
-                }
+                
             },
             lengthChange: false,
             ordering: false,

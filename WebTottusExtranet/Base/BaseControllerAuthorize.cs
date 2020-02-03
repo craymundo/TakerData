@@ -111,6 +111,8 @@ namespace WebTakerData.Base
             ViewBag.PerfilDescripcion = "Administrador";
             ViewBag.CodigoUsuario = codigo;
             ViewBag.ConeccionToken = token;
+            ViewBag.IdUsuario = usuarioActual.UsuarioId;
+            ViewBag.IdEmpresa = usuarioActual.EmpresaId;
         }
 
         private async Task<string> ObtenerConeccionToken()

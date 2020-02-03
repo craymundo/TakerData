@@ -18,5 +18,18 @@ namespace WebTakerData.Areas.Forms.Controllers
           
         }
         public IActionResult Index() => View();
+
+        public IActionResult Editar() => View();
+
+        [HttpGet]
+        public IActionResult EditarForm(string id)
+        {
+            ViewBag.idform = id;
+            return View();
+        }
+
+        public IActionResult InvitacionFormulario() => View();
+
+        public IActionResult CargaInvitados() => View();
     }
 }

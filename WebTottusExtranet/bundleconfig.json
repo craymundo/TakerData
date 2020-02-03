@@ -62,12 +62,24 @@
       "wwwroot/js/Area/Views/FormsGenerator.js"
     ]
   },
-  //{
-  //  "outputFileName": "wwwroot/bundle/js/matenenimientolocales.min.js",
-  //  "inputFiles": [
-  //    "wwwroot/bundle/js/matenenimientolocales.js"
-  //  ]
-  //},
+  {
+    "outputFileName": "wwwroot/bundle/js/formsedit.js",
+    "inputFiles": [
+      "wwwroot/lib/jquery/dist/jquery.js",
+      "wwwroot/js/Base/controller.js",
+      "wwwroot/js/Base/coreajax.js",
+      "wwwroot/js/Area/Views/FormsEdit.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/bundle/js/formsupdate.js",
+    "inputFiles": [
+      "wwwroot/lib/jquery/dist/jquery.js",
+      "wwwroot/js/Base/controller.js",
+      "wwwroot/js/Base/coreajax.js",
+      "wwwroot/js/Area/Views/FormsUpdate.js"
+    ]
+  },
   {
     "outputFileName": "wwwroot/lib/bootstrap/4.3.1/dist/css/bootstrap.min.css",
     "inputFiles": [
