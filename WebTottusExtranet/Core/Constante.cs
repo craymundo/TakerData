@@ -22,6 +22,10 @@
             public static class Login
             {
                 public const string AutentificacionUsuario = "http://localhost:89/ApiPostCupos/public/api/UsuarioAutentificacion/Autentificacion";
+
+                public const string OnLoadBaseDatos = "/api/Local/UpdateLocal";
+                public const string SendBaseDatos = "/api/Local/SaveStorageGcpAsync";
+
             }
 
 

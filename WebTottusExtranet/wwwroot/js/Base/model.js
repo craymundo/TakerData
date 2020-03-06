@@ -44,6 +44,17 @@
         };
     };
 
+    this.responseInvitationSend = function () {
+        return {
+            idUsuario: "",
+            idEmpresa: "",
+            idForm: "",
+            idBD: ""
+        };
+    };
+
+    
+
 };
 
 

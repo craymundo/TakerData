@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using WebTakerData.Models.Api.Autentificaciones;
-using WebTakerData.Models.Api.Local;
+
 
 
 namespace WebTakerData.Models
@@ -13,12 +13,6 @@ namespace WebTakerData.Models
         public AutenticacionUsuario Result { get; set; }
     }
 
-       public class JsonResponseLocalesList
-    {
-        public bool success { get; set; }
-        public string code { get; set; }
-        public string message { get; set; }
-        public List<Local> result { get; set; }
-    }
+   
 
 }

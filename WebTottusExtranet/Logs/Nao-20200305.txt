@@ -1,0 +1,14 @@
+2020-03-05T16:01:19.0501596-05:00 0HLU191CTOQIQ:00000001 [ERR] ObtenerUsuarioActual vacio (dd0b25da)
+System.InvalidOperationException: ObtenerUsuarioActual vacio
+2020-03-05T16:15:54.6317180-05:00 0HLU199HONFDQ:00000001 [ERR] ObtenerUsuarioActual vacio (dd0b25da)
+System.InvalidOperationException: ObtenerUsuarioActual vacio
+2020-03-05T16:16:12.2193519-05:00 0HLU199N063I6:00000001 [ERR] ObtenerUsuarioActual vacio (dd0b25da)
+System.InvalidOperationException: ObtenerUsuarioActual vacio
+2020-03-05T16:18:10.4452960-05:00 0HLU19AQB8OT8:00000001 [ERR] ObtenerUsuarioActual vacio (dd0b25da)
+System.InvalidOperationException: ObtenerUsuarioActual vacio
+2020-03-05T16:20:56.6163090-05:00 0HLU19CBOV84D:00000001 [ERR] ObtenerUsuarioActual vacio (dd0b25da)
+System.InvalidOperationException: ObtenerUsuarioActual vacio
+2020-03-05T16:23:01.5029739-05:00 0HLU19DH25G50:00000001 [ERR] ObtenerUsuarioActual vacio (dd0b25da)
+System.InvalidOperationException: ObtenerUsuarioActual vacio
+2020-03-05T16:25:57.7961796-05:00 0HLU19F5I1A2C:00000001 [ERR] ObtenerUsuarioActual vacio (dd0b25da)
+System.InvalidOperationException: ObtenerUsuarioActual vacio

@@ -10458,6 +10458,82 @@ $(document).ready(function () {
         }).rows.add(response).draw();
     };
 
+
+    $.fn.SetDataTableResponseNoButtonsCustom = function (colm, response , page ) {
+        var name = "#" + this.get(0).id;
+        if (this.DataTable.isDataTable(name)) {
+            this.DataTable().clear();
+            this.DataTable().destroy();
+        }
+        var maxcolumn = $.map(colm.columns, function (value, index) {
+            if (value.title !== "Action") {
+                return [index];
+            }
+        });
+        this.DataTable({
+            bSort: false,
+            bFilter: false,
+            columns: colm.columns,
+            "scrollY": "350px",
+            "scrollCollapse": true,
+            "paging": page,
+            dom: '<"html5buttons"B>lTfgitp',
+            language: {
+                emptyTable: "No se encontraron registros",
+                zeroRecords: "",
+
+            },
+            lengthChange: false,
+            ordering: false,
+            info: false,
+            scrollX: true,
+            responsive: true,
+            buttons: [
+                {
+                    extend: 'copy',
+                    className: "hiddenButton",
+                    exportOptions:
+                    {
+                        columns: maxcolumn,
+                        format: {
+                            body: function (data, row, column, node) {
+                                return data;
+                            }
+                        }
+                    }
+                },
+                {
+                    extend: 'excel',
+                    className: "hiddenButton",
+                    title: 'Document',
+                    exportOptions:
+                    {
+                        columns: maxcolumn,
+                        format: {
+                            body: function (data, row, column, node) {
+                                return data;
+                            }
+                        }
+                    }
+                },
+                {
+                    extend: 'pdf',
+                    className: "hiddenButton",
+                    title: 'Document',
+                    exportOptions:
+                    {
+                        columns: maxcolumn,
+                        format: {
+                            body: function (data, row, column, node) {
+                                return data;
+                            }
+                        }
+                    }
+                }
+            ]
+        }).rows.add(response).draw();
+    };
+
     /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *>Boostrap 3< * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * */
     //$.SwalSuccess = function (message) {
     //    swal({
@@ -10931,7 +11007,7 @@ $(document).ready(function () {
     };
     coreajax = new request();
 });
-const mntoForms = function () {
+mntoForms = function () {
     var me = this;
 
     me.Globals = {

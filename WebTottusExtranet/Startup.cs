@@ -120,9 +120,11 @@ namespace WebTakerData
                 .ScriptSources(s => s.Self().UnsafeEval())
                 .ScriptSources(s => s.Self().CustomSources("raw.githack.com"))
                 .FontSources(s => s.Self().CustomSources("fonts.googleapis.com"))
-                
+                 .FontSources(s => s.Self().CustomSources("fonts.gstatic.com"))
             );
-            
+
+            //https://fonts.gstatic.com/s/opensans/v17/mem5YaGs126MiZpBA-UN_r8OXehpOqc.woff2
+
             app.UseFileServer(new FileServerOptions
             {
                 FileProvider = new PhysicalFileProvider(

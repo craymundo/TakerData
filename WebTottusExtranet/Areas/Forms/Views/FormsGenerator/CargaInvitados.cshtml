@@ -5,5 +5,110 @@
     Layout = "~/Views/Shared/_LayoutExtranet.cshtml";
 }
 
-<h2>CargaInvitados</h2>
+
+<div class="row wrapper border-bottom white-bg page-heading">
+    <div class="col-sm-12">
+        <h2>Carga de Invitados</h2>
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item">
+                <a href="/Home/Index">Home</a>
+            </li>
+            <li class="breadcrumb-item active">
+                <strong>Carga de Invitados</strong>
+            </li>
+        </ol>
+    </div>
+
+</div>
+
+
+<div class="wrapper wrapper-content  animated fadeInRight">
+    <div class="row">
+
+
+        <div class="col-lg-12">
+
+            <div class="form-group  row">
+                <label class="col-sm-2 col-form-label">Base de Datos:</label>
+
+                <div class="col-sm-10">
+
+                    <div class="custom-file">
+                        <input id="file" name="file" type="file" class="custom-file-input">
+                        <label for="logo" class="custom-file-label">Choose file...</label>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-10 ">
+            &nbsp;
+        </div>
+
+        <div class="col-lg-2 float-right">
+            <input type="button" class="btn btn-lg btn-info float-right" value="Cargar Base Invitados" id="btnCargarBase" />
+        </div>
+    </div>
+
+</div>
+
+
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox ">
+                <div class="ibox-title">
+                    <h5>Asignación de Campos</h5>
+                </div>
+                <div class="ibox-content">
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="table-responsive">
+                                <table style="width:100%;" class="table table-striped table-bordered table-hover " id="tblHeaders"></table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="table-responsive">
+                                <table style="width:100%;" class="table table-striped table-bordered table-hover " id="tblBD"></table>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <input type="button" class="btn btn-lg btn-success float-right" value="Subir Base Invitados" id="btnUpload" />
+                        </div>
+                    </div>
+
+
+                </div>
+             </div>
+        </div>
+    </div>
+</div>
+
+<input type="hidden" id="hddidusuario" name="hddidusuario" value="@ViewBag.IdUsuario" readonly="readonly" disabled="disabled" />
+<input type="hidden" id="hddidempresa" name="hddidempresa" value="@ViewBag.IdEmpresa" readonly="readonly" disabled="disabled" />
+<input type="hidden" id="hddidempresa" name="hddcountHeader" value="0" readonly="readonly" disabled="disabled" />
+
+<input type="hidden" id="urlPostOnOnLoadBaseDatos" name="urlPostOnOnLoadBaseDatos" value="@Url.Action("OnLoadBaseDatos", "FormsGenerator")" readonly="readonly" disabled="disabled" />
+<input type="hidden" id="urlPostSendBaseDatos" name="urlPostSendBaseDatos" value="@Url.Action("SendBaseDatos", "FormsGenerator")" readonly="readonly" disabled="disabled" />
+
+
+
+<environment names="Development">
+    <script src="~/bundle/js/formsupload.js"></script>
+</environment>
+<environment names="Production">
+    <script src="~/bundle/js/formsupload.js"></script>
+</environment>
 

@@ -1,8 +1,39 @@
-﻿$(document).ready(function () {
+﻿
+
+$(document).ready(function () {
+
+    $.datepicker.regional['es'] = {
+        closeText: 'Cerrar',
+        prevText: '< Ant',
+        nextText: 'Sig >',
+        currentText: 'Hoy',
+        monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+        monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+        dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+        dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mié', 'Juv', 'Vie', 'Sáb'],
+        dayNamesMin: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sá'],
+        weekHeader: 'Sm',
+        dateFormat: 'dd/mm/yy',
+        firstDay: 1,
+        isRTL: false,
+        showMonthAfterYear: false,
+        yearSuffix: ''
+    };
+    $.datepicker.setDefaults($.datepicker.regional['es']);
 
     $("#btnSiguiente1").unbind().click(function () {
-        $("#div_form_1").hide(1000);
-        $("#div_form_2").show(1000);
+
+        $("#form_paso1").valid();
+        if (!$("#form_paso1").valid()) {
+            return false;
+        } else {
+            $("#div_form_1").hide(1000);
+            $("#div_form_2").show(1000);
+            $("#titleFormPaso2").text($("#txtTitulo").val().toUpperCase());
+        }
+
+
+      
     });
 
     $("#btnAtras1").unbind().click(function () {
@@ -63,6 +94,8 @@
                 objeto_nodo.attr('id', id_li);
 
                 $("#myModalVer > div > div > div.modal-header > h4").html("<b>" + (newIndex + 1) + "</b>&nbsp;&nbsp;<b>Detalle de Pregunta</b>");
+                $("#txtPregunta").parent().find("label").html("<strong>Pregunta</strong>");
+                $("#txtPregunta").attr("placeholder", "Escriba su Pregunta");
 
                 var pattern = /fa-list/g;
                 if (pattern.test(html_object)) {
@@ -78,6 +111,8 @@
                     $("#div_rspt_larga_1").hide();
                     $("#div_rspt_larga_2").hide();
                     $("#div_calificacion").hide();
+
+                    $("#div_tipo_preguntas").show();
                 }
 
                 var pattern = /fa-square-o/g;
@@ -95,6 +130,8 @@
                     $("#div_rspt_larga_1").show();
                     $("#div_rspt_larga_2").show();
                     $("#div_calificacion").hide();
+
+                    $("#div_tipo_preguntas").show();
                 }
 
                 var pattern = /fa-calendar/g;
@@ -111,6 +148,8 @@
                     $("#div_rspt_larga_2").hide();
                     $("#div_calificacion").hide();
                     $("#div_respuesta").show();
+
+                    $("#div_tipo_preguntas").show();
                 }
 
                 var pattern = /fa-star-o/g;
@@ -127,6 +166,8 @@
                     $("#div_rspt_larga_1").hide();
                     $("#div_rspt_larga_2").hide();
                     $("#div_respuesta").hide();
+
+                    $("#div_tipo_preguntas").show();
                 }
 
                 var pattern = /fa-list-ol/g;
@@ -144,8 +185,31 @@
                     $("#div_calificacion").hide();
                     $("#div_respuesta").hide();
 
+                    $("#div_tipo_preguntas").show();
 
                 }
+
+                var pattern = /fa-cube/g;
+                if (pattern.test(html_object)) {
+                    var lnk_edit = "<a href='#' class='btn btn-white btn-bitbucket btn-li-edit' data-tipo='6' data-li-id='" + id_li + "' data-index='" + newIndex + "' id='" + id_edit + "'><i class='fa fa-edit'></i></a>";
+                    html_fa_square = "<b>" + (newIndex + 1) + "</b>  <i class='fa fa-cube'></i> <span class='class-text'>Región</span> <span class='float-right controles'>" + lnk_edit + lnk_del + "</span>";
+                    objeto_nodo.html(html_fa_square);
+                    $("#hddTipoPregunta").val("6");
+                    $("#div_tipo_respuestas").hide();
+                    $(".div_opciones").hide();
+                    $("#div_opciones").hide();
+                    $("#div_restricciones").hide();
+                    $("#div_rspt_larga_1").hide();
+                    $("#div_rspt_larga_2").hide();
+                    $("#div_calificacion").hide();
+                    $("#div_respuesta").hide();
+                    $("#myModalVer > div > div > div.modal-header > h4").html("<b>" + (newIndex + 1) + "</b>&nbsp;&nbsp;<b>Detalle de la Región</b>");
+                    $("#txtPregunta").parent().find("label").html("<strong>Titulo</strong>");
+                    $("#txtPregunta").attr("placeholder", "Escriba el título de la Región");
+
+                    $("#div_tipo_preguntas").hide();
+                }
+
 
                 $("#myModalVer").modal("show");
 
@@ -171,6 +235,7 @@
                     $("#hddidcontrol").val("");
                    
                     cargar_datos_opcion(id_li);
+                    console.log(data_tipo);
                     switch (data_tipo) {
                         case "1":
                             $("#div_tipo_respuestas").show();
@@ -181,6 +246,7 @@
                             $("#div_rspt_larga_1").hide();
                             $("#div_rspt_larga_2").hide();
                             $("#div_calificacion").hide();
+                            $("#div_tipo_preguntas").show();
                             break;
                         case "2":
                             $("#div_tipo_respuestas").hide();
@@ -192,6 +258,8 @@
                             $("#div_rspt_larga_1").show();
                             $("#div_rspt_larga_2").show();
                             $("#div_calificacion").hide();
+
+                            $("#div_tipo_preguntas").show();
                             break;
                         case "3":
                             $("#div_tipo_respuestas").hide();
@@ -202,6 +270,8 @@
                             $("#div_rspt_larga_2").hide();
                             $("#div_calificacion").hide();
                             $("#div_respuesta").show();
+
+                            $("#div_tipo_preguntas").show();
                             break;
                         case "4":
                             $("#div_calificacion").show();
@@ -212,6 +282,8 @@
                             $("#div_rspt_larga_1").hide();
                             $("#div_rspt_larga_2").hide();
                             $("#div_respuesta").hide();
+
+                            $("#div_tipo_preguntas").show();
                             break;
                         case "5":
                             $("#div_tipo_respuestas").hide();
@@ -222,6 +294,22 @@
                             $("#div_rspt_larga_2").hide();
                             $("#div_calificacion").hide();
                             $("#div_respuesta").hide();
+
+                            $("#div_tipo_preguntas").show();
+                            break;
+                        case "6":
+                            $("#div_tipo_respuestas").hide();
+                            $(".div_opciones").hide();
+                            $("#div_opciones").hide();
+                            $("#div_restricciones").hide();
+                            $("#div_rspt_larga_1").hide();
+                            $("#div_rspt_larga_2").hide();
+                            $("#div_calificacion").hide();
+                            $("#div_respuesta").hide();
+
+                            $("#div_opciones_1").hide();
+                            $("#div_tipo_preguntas").hide();
+
                             break;
                         default:
                     }
@@ -285,11 +373,47 @@
     });
 
 
+    $(".datepicker").datepicker({
+        changeMonth: true,
+        changeYear: true,
+        yearRange: "-80:+0",
+        beforeShow: function (input, inst) {
+            var rect = input.getBoundingClientRect();
+            setTimeout(function () {
+                inst.dpDiv.css({ top: rect.top + 40, left: rect.left + 0 });
+            }, 0);
+        }
+    });
+
+
+
+    $("#form_paso1").validate({
+        ignore: [],
+        rules: {
+            txtTitulo: { required: true },
+            txtFechaVigencia: { required: true },
+
+        },
+        messages: {
+            txtTitulo: { required: "* Ingrese el titulo del formulario" },
+            txtFechaVigencia: { required: "* Ingrese la fecha de vigencia del formulario" },
+        },
+        highlight: function (element) {
+            $(element).closest('.control-group').removeClass('success').addClass('error');
+        },
+        success: function (element) {
+            $(element).addClass('valid').closest('.control-group').removeClass('error').addClass('success');
+        },
+    });
+
+ 
   
 
 });
 
 var id_opciones = 1;
+
+
 
 function agregar_opciones() {
 
@@ -521,10 +645,14 @@ function guardar_datos_texto() {
 
 function generar_preview() {
 
+    $("#titleForm").html($("#txtTitulo").val().toUpperCase());
+    $("#lblComentarioForm").text($("#txtComentario").val());
+    $("#lblFechaVigenteForm").text($("#txtFechaVigencia").val());
 
     var controls = window.sessionStorage.getItem("controls");
     var newObj = JSON.parse(controls);
     var str_html = "";
+    var cont_pregunta = 1;
     for (var i = 0; i < newObj.length; i++) {
         var objeto = newObj[i];
 
@@ -553,10 +681,10 @@ function generar_preview() {
 
 
                 str_html = str_html + "<div class='form-group'> " +
-                    "    <label class='col-sm-12 col-form-label'><h3>" + objeto.pregunta+"</h3></label > " +
+                    "    <label class='col-sm-12 col-form-label'><h3><b>" + cont_pregunta+". </b>" + objeto.pregunta+"</h3></label > " +
                     "    <div class='col-sm-12'>" + str_html_controls+"</div> " +
                     "</div>";
-
+                cont_pregunta++;
                 break;
             case "2":
                 str_html_controls = "";
@@ -567,22 +695,22 @@ function generar_preview() {
                 }
 
                 str_html = str_html + "<div class='form-group'> " +
-                    "    <label class='col-sm-12 col-form-label'><h3>" + objeto.pregunta + "</h3></label > " +
+                    "    <label class='col-sm-12 col-form-label'><h3><b>" + cont_pregunta +". </b>" + objeto.pregunta + "</h3></label > " +
                     "    <div class='col-sm-12'>" + str_html_controls+"</div> " +
                     "</div>";
-
+                cont_pregunta++;
                 break;
             case "3":
 
                 str_html_controls = "";
-                str_html_controls = "<input type='text' class='form-control' id='txtfec" + objeto.id + "' name='txtfec" + objeto.id + "' placeholder='dd/MM/YY'>";
+                str_html_controls = "<input type='text' class='form-control datepicker' id='txtfec" + objeto.id + "' name='txtfec" + objeto.id + "' placeholder='dd/MM/YY'>";
                
 
                 str_html = str_html + "<div class='form-group'> " +
-                    "    <label class='col-sm-12 col-form-label'><h3>" + objeto.pregunta + "</h3></label > " +
+                    "    <label class='col-sm-12 col-form-label'><h3><b>" + cont_pregunta +". </b>" + objeto.pregunta + "</h3></label > " +
                     "    <div class='col-sm-12'>" + str_html_controls + "</div> " +
                     "</div>";
-
+                cont_pregunta++;
                 break;
             case "4":
 
@@ -594,10 +722,10 @@ function generar_preview() {
 
 
                 str_html = str_html + "<div class='form-group'> " +
-                    "    <label class='col-sm-12 col-form-label'><h3>" + objeto.pregunta + "</h3></label > " +
+                    "    <label class='col-sm-12 col-form-label'><h3><b>" + cont_pregunta +". </b>" + objeto.pregunta + "</h3></label > " +
                     "    <div class='col-sm-12'>" + str_html_controls + "</div> " +
                     "</div>";
-
+                cont_pregunta++;
                 break;
             case "5":
                 str_html_controls = "<ul class='list-group clear-list m-t ul_drag_drop' style='font-size:16px!important;' id='" + objeto.id + "' >";
@@ -610,14 +738,23 @@ function generar_preview() {
                 str_html_controls = str_html_controls + "</ul>";
  
                 str_html = str_html + "<div class='form-group'> " +
-                    "    <label class='col-sm-12 col-form-label'><h3>" + objeto.pregunta + "</h3></label > " +
+                    "    <label class='col-sm-12 col-form-label'><h3><b>" + cont_pregunta +". </b>" + objeto.pregunta + "</h3></label > " +
                     "    <div class='col-sm-12'>" + str_html_controls + "</div> " +
                     "</div>";
-   
+                cont_pregunta++;
+                break;
+
+            case "6":
+                str_html_controls = " <div class='hr-line-dashed'></div>";
+                str_html = str_html + "<div class='form-group'> " +
+                    "    <label class='col-sm-12 col-form-label'><h4 style='font-size: 22px!important;'>" + objeto.pregunta + "</h4></label > " +
+                    "     " + str_html_controls + ""+ 
+                    "</div>";
                 break;
             default:
         }
 
+       
     }
 
   
@@ -655,6 +792,18 @@ function generar_preview() {
     );
 
     $(".ul_drag_drop").sortable();
+
+    $(".datepicker").datepicker({
+        changeMonth: true,
+        changeYear: true,
+        yearRange: "-80:+0",
+        beforeShow: function (input, inst) {
+            var rect = input.getBoundingClientRect();
+            setTimeout(function () {
+                inst.dpDiv.css({ top: rect.top + 40, left: rect.left + 0 });
+            }, 0);
+        }
+    });
 
 }
 

@@ -1,4 +1,4 @@
-﻿const mntoForms = function () {
+﻿mntoForms = function () {
     var me = this;
 
     me.Globals = {

@@ -1,0 +1,7 @@
+2020-03-06T00:19:30.5742912-05:00 0HLU1HNPAP98D:00000001 [ERR] ObtenerUsuarioActual vacio (dd0b25da)
+System.InvalidOperationException: ObtenerUsuarioActual vacio
+2020-03-06T00:29:04.9249740-05:00 0HLU1HNPAP98P:00000003 [ERR] Object reference not set to an instance of an object. (f59a5554)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at WebTakerData.Areas.Forms.Controllers.FormsGeneratorController.OnLoadBaseDatos(IFormFile files, String idusuario, String idempresa) in C:\Users\soporte\Desktop\Inf HDD\Sistema Generador Formularios\TakerData\WebTottusExtranet\Areas\Forms\Controllers\FormsGeneratorController.cs:line 61
+2020-03-06T00:37:11.9312975-05:00 0HLU1I1LJP208:00000001 [ERR] ObtenerUsuarioActual vacio (dd0b25da)
+System.InvalidOperationException: ObtenerUsuarioActual vacio

@@ -1,0 +1,42 @@
+2020-02-12T16:47:17.8136980-05:00 0HLTG0KGI6L70:00000001 [ERR] ObtenerUsuarioActual vacio (dd0b25da)
+System.InvalidOperationException: ObtenerUsuarioActual vacio
+2020-02-12T16:50:38.8015933-05:00 0HLTG0MCFHB46:00000001 [ERR] ObtenerUsuarioActual vacio (dd0b25da)
+System.InvalidOperationException: ObtenerUsuarioActual vacio
+2020-02-12T16:53:55.4690261-05:00 0HLTG0O73DDFU:00000001 [ERR] ObtenerUsuarioActual vacio (dd0b25da)
+System.InvalidOperationException: ObtenerUsuarioActual vacio
+2020-02-12T18:31:52.6133560-05:00 0HLTG2EUIU71V:00000001 [ERR] ObtenerUsuarioActual vacio (dd0b25da)
+System.InvalidOperationException: ObtenerUsuarioActual vacio
+2020-02-12T18:33:53.7830036-05:00 0HLTG2EUIU71V:0000000C [ERR] The process cannot access the file 'C:\Users\soporte\Desktop\Inf HDD\Sistema Generador Formularios\TakerData\WebTottusExtranet\wwwroot\FilesUpload\Ejemplo.xlsx' because it is being used by another process. (e32cc20e)
+System.IO.IOException: The process cannot access the file 'C:\Users\soporte\Desktop\Inf HDD\Sistema Generador Formularios\TakerData\WebTottusExtranet\wwwroot\FilesUpload\Ejemplo.xlsx' because it is being used by another process.
+   at System.IO.FileStream.OpenHandle(FileMode mode, FileShare share, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at WebTakerData.Areas.Forms.Controllers.FormsGeneratorController.OnLoadBaseDatos(IFormFile files, String idusuario, String idempresa) in C:\Users\soporte\Desktop\Inf HDD\Sistema Generador Formularios\TakerData\WebTottusExtranet\Areas\Forms\Controllers\FormsGeneratorController.cs:line 64
+2020-02-12T18:41:32.9774014-05:00 0HLTG2KBHGH81:00000001 [ERR] ObtenerUsuarioActual vacio (dd0b25da)
+System.InvalidOperationException: ObtenerUsuarioActual vacio
+2020-02-12T18:47:59.4598820-05:00 0HLTG2KBHGH83:00000008 [ERR] The process cannot access the file 'C:\Users\soporte\Desktop\Inf HDD\Sistema Generador Formularios\TakerData\WebTottusExtranet\wwwroot\FilesUpload\Ejemplo.xlsx' because it is being used by another process. (e32cc20e)
+System.IO.IOException: The process cannot access the file 'C:\Users\soporte\Desktop\Inf HDD\Sistema Generador Formularios\TakerData\WebTottusExtranet\wwwroot\FilesUpload\Ejemplo.xlsx' because it is being used by another process.
+   at System.IO.FileStream.OpenHandle(FileMode mode, FileShare share, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at WebTakerData.Areas.Forms.Controllers.FormsGeneratorController.OnLoadBaseDatos(IFormFile files, String idusuario, String idempresa) in C:\Users\soporte\Desktop\Inf HDD\Sistema Generador Formularios\TakerData\WebTottusExtranet\Areas\Forms\Controllers\FormsGeneratorController.cs:line 64
+2020-02-12T18:53:16.2306343-05:00 0HLTG2KBHGH89:00000008 [ERR] The process cannot access the file 'C:\Users\soporte\Desktop\Inf HDD\Sistema Generador Formularios\TakerData\WebTottusExtranet\wwwroot\FilesUpload\Ejemplo.xlsx' because it is being used by another process. (e32cc20e)
+System.IO.IOException: The process cannot access the file 'C:\Users\soporte\Desktop\Inf HDD\Sistema Generador Formularios\TakerData\WebTottusExtranet\wwwroot\FilesUpload\Ejemplo.xlsx' because it is being used by another process.
+   at System.IO.FileStream.OpenHandle(FileMode mode, FileShare share, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at WebTakerData.Areas.Forms.Controllers.FormsGeneratorController.OnLoadBaseDatos(IFormFile files, String idusuario, String idempresa) in C:\Users\soporte\Desktop\Inf HDD\Sistema Generador Formularios\TakerData\WebTottusExtranet\Areas\Forms\Controllers\FormsGeneratorController.cs:line 64
+2020-02-12T18:54:50.2042460-05:00 0HLTG2KBHGH8C:00000001 [ERR] The process cannot access the file 'C:\Users\soporte\Desktop\Inf HDD\Sistema Generador Formularios\TakerData\WebTottusExtranet\wwwroot\FilesUpload\Ejemplo.xlsx' because it is being used by another process. (e32cc20e)
+System.IO.IOException: The process cannot access the file 'C:\Users\soporte\Desktop\Inf HDD\Sistema Generador Formularios\TakerData\WebTottusExtranet\wwwroot\FilesUpload\Ejemplo.xlsx' because it is being used by another process.
+   at System.IO.FileStream.OpenHandle(FileMode mode, FileShare share, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at WebTakerData.Areas.Forms.Controllers.FormsGeneratorController.OnLoadBaseDatos(IFormFile files, String idusuario, String idempresa) in C:\Users\soporte\Desktop\Inf HDD\Sistema Generador Formularios\TakerData\WebTottusExtranet\Areas\Forms\Controllers\FormsGeneratorController.cs:line 64
+2020-02-12T19:04:18.4928794-05:00 0HLTG2KBHGH8G:00000001 [ERR] The process cannot access the file 'C:\Users\soporte\Desktop\Inf HDD\Sistema Generador Formularios\TakerData\WebTottusExtranet\wwwroot\FilesUpload\Ejemplo.xlsx' because it is being used by another process. (e32cc20e)
+System.IO.IOException: The process cannot access the file 'C:\Users\soporte\Desktop\Inf HDD\Sistema Generador Formularios\TakerData\WebTottusExtranet\wwwroot\FilesUpload\Ejemplo.xlsx' because it is being used by another process.
+   at System.IO.FileStream.OpenHandle(FileMode mode, FileShare share, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options)
+   at System.IO.FileStream..ctor(String path, FileMode mode)
+   at WebTakerData.Areas.Forms.Controllers.FormsGeneratorController.OnLoadBaseDatos(IFormFile files, String idusuario, String idempresa) in C:\Users\soporte\Desktop\Inf HDD\Sistema Generador Formularios\TakerData\WebTottusExtranet\Areas\Forms\Controllers\FormsGeneratorController.cs:line 64
+2020-02-12T23:37:49.7758951-05:00 0HLTG7PTF0PUH:00000001 [ERR] ObtenerUsuarioActual vacio (dd0b25da)
+System.InvalidOperationException: ObtenerUsuarioActual vacio
