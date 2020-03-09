@@ -29,7 +29,7 @@ namespace WebTakerData.Controllers
             _usuarioProvider = usuarioProvider;
         }
 
-        public IActionResult Index(string returnUrl)
+        public IActionResult Index(string returnUrl = null)
         {
             var model = new LoginModel
             {

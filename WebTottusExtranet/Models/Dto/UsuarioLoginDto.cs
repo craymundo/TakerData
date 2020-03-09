@@ -7,10 +7,8 @@ namespace WebTakerData.Models.Dto
 {
     public class UsuarioLoginDto
     {
-        public string CodigoPais { get; set; }
-        public string CodigoEmpresa { get; set; }
-        public string CodigoSistema { get; set; }
-        public string Usuario { get; set; }
-        public string Contrasena { get; set; }
+       
+        public string CodigoUsuario { get; set; }
+        public string ClaveSecreta { get; set; }
     }
 }

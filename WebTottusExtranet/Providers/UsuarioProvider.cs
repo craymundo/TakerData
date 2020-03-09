@@ -24,8 +24,8 @@ namespace WebTakerData.Providers
         {
             var obj = new UsuarioLoginDto
             {
-                Usuario         = model.CodigoUsuario,
-                Contrasena      = model.ClaveSecreta
+                CodigoUsuario         = model.CodigoUsuario,
+                ClaveSecreta = model.ClaveSecreta
             };
             return await requestclient.PostAsync<JsonResponseAutenticacionUsuario>(Constante.Api.Login.AutentificacionUsuario, obj);
         }
