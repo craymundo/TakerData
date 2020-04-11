@@ -13,9 +13,7 @@
 
     me.Funciones = {
         InicializarEventos: function () {
-
-            
-            $(document).on('click', '#btnEliminar', me.Eventos.ValidaEliminar);
+            $("#btnEliminar").unbind().click(function () { me.Eventos.ValidaEliminar(); });
             $(document).on('click', '#tblforms tr td .btnEditar', me.Eventos.ValidaEditar);
             $(document).on('click', '#tblforms tr td .btnEliminar', me.Eventos.VerModalEliminar);
         },
@@ -26,8 +24,8 @@
             datatable.ClearDataTable();
             datatable.SetDataTableResponseLoad(me.Funciones.DatatableColumn());
         },
-        Listar: function (http) {
-            coreajax.ajax.PostAsync(http, null, function (data) {
+        Listar: function (http,parametros) {
+            coreajax.ajax.PostAsync(http, parametros, function (data) {
                 if (data.success) {
                     me.Globals.tblforms.SetDataTableResponseNoButtons(me.Funciones.DatatableColumn(), data.result);
                 } else
@@ -83,8 +81,11 @@
 
     me.Eventos = {
          ValidaListar: function (e) {
-            var ruta = string_api(conexion.api, "api/Formulario/GetAllFormularios");
-            me.Funciones.Listar(ruta);
+            var ruta = string_api(conexion.api, "api/Formularios/GetAllFormularios");
+            var entidad = entidadmodel.requestGetAllFormularios();
+            entidad.idEmpresa = conexion.codigoempresa;
+            entidad.idUsuario = conexion.codigousuario;
+            me.Funciones.Listar(ruta, entidad);
             if (e !== undefined) e.preventDefault();
         },
         ValidaEditar: function (e) {
@@ -97,10 +98,12 @@
             me.Globals.hddidform.val(data_table.idform);
         },
         ValidaEliminar: function (e) {
-            var ruta = string_api(conexion.api, "api/Formulario/DeleteFormulario");
-            var obj = new Object();
-            obj.id = me.Globals.hddidform.val();
-            me.Funciones.TransacionDelete(ruta, obj);
+            var ruta = string_api(conexion.api, "api/Formularios/DeleteFormulario");
+            var entidad = entidadmodel.requestGetAllFormularios();
+            entidad.idEmpresa = conexion.codigoempresa;
+            entidad.idUsuario = conexion.codigousuario;
+            entidad.idForm = me.Globals.hddidform.val();
+            me.Funciones.TransacionDelete(ruta, entidad);
         },
     };
 

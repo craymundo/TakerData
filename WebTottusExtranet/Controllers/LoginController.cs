@@ -18,6 +18,7 @@ using WebTakerData.Utilities;
 
 namespace WebTakerData.Controllers
 {
+    [Route("[controller]/[action]")]
     public class LoginController : Controller
     {
         private readonly IUsuarioProvider _usuarioProvider;
@@ -67,7 +68,11 @@ namespace WebTakerData.Controllers
                             if (!returnUrl.IsNull())
                             {
                                 if (returnUrl.Contains('/'))
-                                    return await Task.Run(() => RedirectToAction("Index", "Home"));
+                                {
+                                        return await Task.Run(() => RedirectToAction("Index", "Home"));
+                                   // return RedirectToAction("Index", "Home");
+
+                                }
                                 else if (Url.IsLocalUrl(returnUrl))
                                     return await Task.Run(() => Redirect(returnUrl));
                                 else
@@ -120,7 +125,7 @@ namespace WebTakerData.Controllers
         //{
         //    await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
         //    HttpContext.Session.Clear();
-       // }
+        //}
 
         private async Task GuardarClaimsSesion(string codigoUsuario, Usuario usuario, List<Menu> Menus)
         {

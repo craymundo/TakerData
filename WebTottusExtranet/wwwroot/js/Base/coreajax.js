@@ -7,14 +7,14 @@ $(document).ready(function () {
         var input = this;
         input.ajax = {
             PostAsync: function (url, datasend, fresult) {
-
+                //headers: { 'Access-Control-Allow-Origin': 'htt://site allowed to access' },
                 $.ajax({
                     url: url,
                     cache: false,
                     async: true,
                     crossOrigin: true,
-                    crossDomain: true,
                     dataType: 'json',
+                    crossDomain: true,
                     method: "POST",
                     data: JSON.stringify(datasend),
                     contentType: 'application/json; charset=utf-8',

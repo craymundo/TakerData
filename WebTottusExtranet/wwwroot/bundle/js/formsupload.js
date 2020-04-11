@@ -10704,14 +10704,14 @@ $(document).ready(function () {
         var input = this;
         input.ajax = {
             PostAsync: function (url, datasend, fresult) {
-
+                //headers: { 'Access-Control-Allow-Origin': 'htt://site allowed to access' },
                 $.ajax({
                     url: url,
                     cache: false,
                     async: true,
                     crossOrigin: true,
-                    crossDomain: true,
                     dataType: 'json',
+                    crossDomain: true,
                     method: "POST",
                     data: JSON.stringify(datasend),
                     contentType: 'application/json; charset=utf-8',
@@ -11103,6 +11103,23 @@ mntoForms = function () {
             };
             return response;
         },
+        CargarBD: function (http, parametros) {
+            coreajax.ajax.PostAsync(http, parametros, function (data) {
+                if (data.success) {
+
+                    toastr.success("Se cargo correctamente la base de datos", conexion.titulo, { timeOut: 1000 });
+                    $('#file').val("");
+                    $("#page-wrapper > div:nth-child(3) > div:nth-child(1) > div > div > div > div > label").html("");
+                    me.Globals.tblHeaders.ClearDataTable();
+                    me.Globals.tblBD.ClearDataTable();
+                    $("#tblHeaders").empty();
+                    $("#tblBD").empty();
+
+                } else
+                    toastr.error(data.message, conexion.titulo, { timeOut: 1000 });
+                $.msg('unblock');
+            });
+        }
 
     };
     
@@ -11139,15 +11156,60 @@ mntoForms = function () {
                 cont++;
             });
 
-            console.log(headers);
+            var rows = [];
+            cont = 0;
+            $("#tblBD tbody tr").each(function (index) {
+                var valName = "";
+                var valTypeColumn = "";
+                $(this).children("td").each(function (index2) {
 
-            toastr.success("Se cargo correctamente la base de datos", conexion.titulo, { timeOut: 1000 });
-            $('#file').val("");
-            $("#page-wrapper > div:nth-child(3) > div:nth-child(1) > div > div > div > div > label").html("");
-            me.Globals.tblHeaders.ClearDataTable();
-            me.Globals.tblBD.ClearDataTable();
-            $("#tblHeaders").empty();
-            $("#tblBD").empty();
+                    switch (index2) {
+                        case 0:
+                          
+                            col1 = $(this).text();
+                            break;
+                        case 1:
+                           
+                            col2 = $(this).text();
+                            break;
+                        case 2:
+
+                            col3 = $(this).text();
+                            break;
+                        case 3:
+
+                            col4 = $(this).text();
+                            break;
+                        case 4:
+
+                            col5 = $(this).text();
+                            break;
+                        case 5:
+
+                            col6 = $(this).text();
+                            break;
+
+                        case 6:
+
+                            col7 = $(this).text();
+                            break;
+                    }
+                });
+                var row = { col1: col1, col2: col2, col3: col3, col4: col4, col5: col5, col6: col6, col7: col7 };
+                rows.push(row);
+                cont++;
+            });
+
+            console.log(headers);
+            var ruta = string_api(conexion.api, "api/Formularios/SendBaseDatos");
+            var entidad = entidadmodel.requestSendBaseDatos();
+            entidad.idEmpresa = conexion.codigoempresa;
+            entidad.idUsuario = conexion.codigousuario;
+            entidad.header = headers;
+            entidad.rows = rows;
+            //console.log(entidad);
+            me.Funciones.CargarBD(ruta, entidad);
+           
         },
 
     };

@@ -10704,14 +10704,14 @@ $(document).ready(function () {
         var input = this;
         input.ajax = {
             PostAsync: function (url, datasend, fresult) {
-
+                //headers: { 'Access-Control-Allow-Origin': 'htt://site allowed to access' },
                 $.ajax({
                     url: url,
                     cache: false,
                     async: true,
                     crossOrigin: true,
-                    crossDomain: true,
                     dataType: 'json',
+                    crossDomain: true,
                     method: "POST",
                     data: JSON.stringify(datasend),
                     contentType: 'application/json; charset=utf-8',
@@ -11062,8 +11062,39 @@ $(document).ready(function () {
     });
 
     $("#btnGuardar").unbind().click(function () {
-        toastr.success("Se registro correctamente el formulario", conexion.titulo, { timeOut: 1000 });
-        limpiar_formulario();
+
+        var ruta = string_api(conexion.api, "api/Formularios/InsertForm");
+        var controls = window.sessionStorage.getItem("controls");
+        var entidad = entidadmodel.formulario();
+
+
+        if (controls == null) {
+            toastr.error("No se ha configurado correctamente el formulario", conexion.titulo, { timeOut: 1000 });
+            $.msg('unblock');
+
+            return false;
+        }
+
+        entidad.titulo = $("#txtTitulo").val();
+        entidad.comentario = $("#txtComentario").val();
+        entidad.fecha_vigencia = $("#txtFechaVigencia").val();
+        entidad.idusuario = $("#hddidusuario").val();
+        entidad.idempresa = $("#hddidempresa").val();
+        var newObj = JSON.parse(controls);
+
+        entidad.controls = newObj;
+
+        coreajax.ajax.PostAsync(ruta, entidad, function (data) {
+            if (data.success) {
+                toastr.success("Se registro correctamente el formulario", conexion.titulo, { timeOut: 1000 });
+                limpiar_formulario();
+            }
+            else
+                toastr.error(data.message, conexion.titulo, { timeOut: 1000 });
+            $.msg('unblock');
+        });
+
+       
     });
 
     var example4Left = document.getElementById('div_left_control');

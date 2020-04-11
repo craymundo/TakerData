@@ -10704,14 +10704,14 @@ $(document).ready(function () {
         var input = this;
         input.ajax = {
             PostAsync: function (url, datasend, fresult) {
-
+                //headers: { 'Access-Control-Allow-Origin': 'htt://site allowed to access' },
                 $.ajax({
                     url: url,
                     cache: false,
                     async: true,
                     crossOrigin: true,
-                    crossDomain: true,
                     dataType: 'json',
+                    crossDomain: true,
                     method: "POST",
                     data: JSON.stringify(datasend),
                     contentType: 'application/json; charset=utf-8',
@@ -11035,9 +11035,15 @@ mntoForms = function () {
             $(document).on('click', '#btnAtras1', me.Eventos.PreviousOne);
             $(document).on('click', '#btnSiguiente2', me.Eventos.NextTwo);
             $(document).on('click', '#btnAtras2', me.Eventos.PreviousTwo);
-            $(document).on('click', '#btnGuardar', me.Eventos.ValidarGuardar);
-            $(document).on('click', '#btnGuardarControl', me.Eventos.ValidarGuardarPregunta);
-            $(document).on('click', '#btnAgregarOpcion', me.Eventos.ValidarAgregarOpcPregunta);      
+            //$(document).on('click', '#btnGuardar', me.Eventos.ValidarGuardar);
+            //$(document).on('click', '#btnGuardarControl', me.Eventos.ValidarGuardarPregunta);
+            //$(document).on('click', '#btnAgregarOpcion', me.Eventos.ValidarAgregarOpcPregunta); 
+
+            $("#btnGuardar").unbind().click(function () { me.Eventos.ValidarGuardar(); });
+            $("#btnGuardarControl").unbind().click(function () { me.Eventos.ValidarGuardarPregunta(); });
+            $("#btnAgregarOpcion").unbind().click(function () { me.Eventos.ValidarAgregarOpcPregunta(); });
+
+                 
 
             $('#myModalVer').unbind().on("hidden.bs.modal", function () {
 
@@ -11345,8 +11351,8 @@ mntoForms = function () {
                 },
             });
         },
-        GetOneForm: function (http) {
-            coreajax.ajax.PostAsync(http, null, function (data) {
+        GetOneForm: function (http,parametros) {
+            coreajax.ajax.PostAsync(http, parametros, function (data) {
                 if (data.success) {
                     me.Globals.titulo.val(data.result.titulo);
                     me.Globals.comentario.val(data.result.comentario);
@@ -11770,13 +11776,31 @@ mntoForms = function () {
             $("#div_opciones").children().each(function (index) {
                 $(this).find("strong").text(index + 1);
             });
+        },
+        TransaccionUpdateFormulario: function (ruta, entidad) {
+
+            coreajax.ajax.PostAsync(ruta, entidad, function (data) {
+                if (data.success) {
+                    toastr.success("Se registro correctamente el formulario", conexion.titulo, { timeOut: 1000 });
+                    window.location.href = "/Forms/FormsGenerator/Editar";
+                }
+                else
+                    toastr.error(data.message, conexion.titulo, { timeOut: 1000 });
+                $.msg('unblock');
+            });
+
         }
     };
 
     me.Eventos = {
         GetOneForm: function (e) {
-            var ruta = string_api(conexion.api, "api/Formulario/GetOneForm");
-            me.Funciones.GetOneForm(ruta);
+            var ruta = string_api(conexion.api, "api/Formularios/GetOneForm");
+            var entidad = entidadmodel.requestGetOneForm();
+            entidad.idEmpresa = conexion.codigoempresa;
+            entidad.idUsuario = conexion.codigousuario;
+            entidad.idForm = $("#hddidform").val();
+            console.log(entidad);
+            me.Funciones.GetOneForm(ruta, entidad);
             if (e !== undefined) e.preventDefault();
         },
         NextOne: function (e) {
@@ -11809,11 +11833,30 @@ mntoForms = function () {
             me.Globals.div_form_2.show(1000);
         },
         ValidarGuardar: function (e) {
-           // console.log("ACTUALIZAR FORM");
-            toastr.success("Se registro correctamente el formulario", conexion.titulo, { timeOut: 1000 });
-            // limpiar_formulario(); redireccionar al listar.
-            
-            window.location.href = "/Forms/FormsGenerator/Editar";
+
+            var ruta = string_api(conexion.api, "api/Formularios/UpdateFormulario");
+            var controls = window.sessionStorage.getItem("controls");
+            var entidad = entidadmodel.formulario();
+
+
+            if (controls == null) {
+                toastr.error("No se ha configurado correctamente el formulario", conexion.titulo, { timeOut: 1000 });
+                $.msg('unblock');
+
+                return false;
+            }
+            entidad.idform = $("#hddidform").val();
+            entidad.titulo = $("#txtTitulo").val();
+            entidad.comentario = $("#txtComentario").val();
+            entidad.fecha_vigencia = $("#txtFechaVigencia").val();
+            entidad.idusuario = $("#hddidusuario").val();
+            entidad.idempresa = $("#hddidempresa").val();
+            var newObj = JSON.parse(controls);
+
+            entidad.controls = newObj;
+
+            me.Funciones.TransaccionUpdateFormulario(ruta, entidad);
+           
         },
         ValidarAgregarOpcPregunta: function () {
             var contador = $("#div_opciones").children().length;
@@ -11968,5 +12011,16 @@ $(document).ready(function () {
         checkboxClass: 'icheckbox_square-green',
         radioClass: 'iradio_square-green',
     });
+
+   // alert(GetURLParameter(0));
 });
 
+function GetURLParameter() {
+    var sPageURL = window.location.href;
+    var indexOfLastSlash = sPageURL.lastIndexOf("/");
+
+    if (indexOfLastSlash > 0 && sPageURL.length - 1 != indexOfLastSlash)
+        return sPageURL.substring(indexOfLastSlash + 1);
+    else
+        return 0;
+}

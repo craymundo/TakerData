@@ -1,0 +1,4 @@
+2020-03-20T21:25:01.4045273-05:00 0HLUD7S590JP4:00000002 [ERR] ObtenerUsuarioActual vacio (dd0b25da)
+System.InvalidOperationException: ObtenerUsuarioActual vacio
+2020-03-20T23:47:49.6897833-05:00 0HLUDAC0V2MT0:00000001 [ERR] ObtenerUsuarioActual vacio (dd0b25da)
+System.InvalidOperationException: ObtenerUsuarioActual vacio

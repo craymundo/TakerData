@@ -58,9 +58,7 @@
         <!-- Navigation -->
         @Html.Partial("_NavigationExtranet")
         <!-- Page wraper -->
-        <div id="page-wrapper" class="gray-bg @ViewBag.SpecialClass">
-
-            <!-- Top Navbar -->
+        <div id="page-wrapper" <!-- Top Navbar -->
             @Html.Partial("_TopNavbarExtranet")
 
             <!-- Main view  -->
@@ -77,34 +75,37 @@
     <!-- End wrapper-->
 
     <input type="hidden" id="hdapi" value="@AppService.Api" readonly="readonly" disabled="disabled" />
-    <input type="hidden" id="hdncodigousuario" value="@ViewBag.CodigoUsuario" readonly="readonly" disabled="disabled" />
+    <input type="hidden" id="hdncodigousuario" value="@ViewBag.IdUsuario" readonly="readonly" disabled="disabled" />
+    <input type="hidden" id="hdncodigoempresa" value="@ViewBag.IdEmpresa" readonly="readonly" disabled="disabled" />
     <input type="hidden" id="hdnconecciontoken" value="@ViewBag.ConeccionToken" readonly="readonly" disabled="disabled" />
 
     <environment names="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/Popper/dist/js/popper.js"></script>
-        <script src="~/lib/jquery-validation/dist/js/jquery.validate.js"></script>
-        <script src="~/lib/jquery-validation/dist/js/additional-methods.js"></script>
-        <script src="~/lib/bootstrap/4.3.1/dist/js/bootstrap.js"></script>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
         <script src="~/lib/Popper/dist/js/popper.min.js"></script>
-        <script src="~/lib/metisMenu/dist/js/jquery.metisMenu.js"></script>
-        <script src="~/lib/slimScroll/jquery.slimscroll.js"></script>
-        <script src="~/lib/pace/dist/js/pace.js"></script>
-        <script src="~/lib/datatable/dist/js/datatables.js"></script>
+        <script src="~/lib/jquery-validation/dist/js/jquery.validate.min.js"></script>
+        <script src="~/lib/jquery-validation/dist/js/additional-methods.min.js"></script>
+        <script src="~/lib/bootstrap/4.3.1/dist/js/bootstrap.min.js"></script>
+        <script src="~/lib/Popper/dist/js/popper.min.js"></script>
+        <script src="~/lib/metisMenu/dist/js/jquery.metisMenu.min.js"></script>
+        <script src="~/lib/slimScroll/jquery.slimscroll.min.js"></script>
+        <script src="~/lib/pace/dist/js/pace.min.js"></script>
+        <script src="~/lib/datatable/dist/js/datatables.min.js"></script>
         <script src="~/lib/datatable/dist/js/dataTables.bootstrap4.js"></script>
-        <script src="~/lib/jquery.msg/dist/js/jquery.center.js"></script>
-        <script src="~/lib/jquery.msg/dist/js/jquery.msg.js"></script>
-        <script src="~/lib/sweet-alert/v2/dist/js/sweetalert.js"></script>
-        <script src="~/lib/toastr/v2/dist/js/toastr.js"></script>
-        <script src="~/lib/select2/dist/js/select2.js"></script>
-        <script src="~/js/Base/conexion.js"></script>
-        <script src="~/js/Base/model.js"></script>
+        <script src="~/lib/jquery.msg/dist/js/jquery.center.min.js"></script>
+        <script src="~/lib/jquery.msg/dist/js/jquery.msg.min.js"></script>
+        <script src="~/lib/sweet-alert/v2/dist/js/sweetalert.min.js"></script>
+        <script src="~/lib/toastr/v2/dist/js/toastr.min.js"></script>
+        <script src="~/lib/select2/dist/js/select2.min.js"></script>
+        <script src="~/js/Base/conexion.min.js"></script>
+        <script src="~/js/Base/model.min.js"></script>
         <script src="~/js/Base/controller.js"></script>
-        <script src="~/js/Base/coreajax.js"></script>
-        <script src="~/lib/dropzone/v2/dist/js/dropzone.js"></script>
-        <script src="~/lib/inspinia/dist/js/script.js" asp-append-version="true"></script>
-        <script src="~/lib/inspinia/dist/js/skin.config.js"></script>
+        <script src="~/js/Base/coreajax.min.js"></script>
+        <script src="~/lib/dropzone/v2/dist/js/dropzone.min.js"></script>
+        <script src="~/lib/inspinia/dist/js/script.min.js" asp-append-version="true"></script>
+        <script src="~/lib/inspinia/dist/js/skin.config.min.js" asp-append-version="true"></script>
+
         <script src="~/lib/jquery-sortablejs-master/Sortable.js"></script>
+
         <script src="~/lib/iCheck/dist/js/icheck.min.js"></script>
         <script src="~/lib/raty-master/jquery.raty.js"></script>
         <script src="~/lib/jquery-sortablejs-master/jquery-ui.js"></script>
@@ -134,7 +135,7 @@
         <script src="~/lib/dropzone/v2/dist/js/dropzone.min.js"></script>
         <script src="~/lib/inspinia/dist/js/script.min.js" asp-append-version="true"></script>
         <script src="~/lib/inspinia/dist/js/skin.config.min.js" asp-append-version="true"></script>
- 
+
         <script src="~/lib/jquery-sortablejs-master/Sortable.js"></script>
 
         <script src="~/lib/iCheck/dist/js/icheck.min.js"></script>
