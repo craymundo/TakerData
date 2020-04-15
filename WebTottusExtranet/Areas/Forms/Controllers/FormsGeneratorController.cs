@@ -17,7 +17,7 @@ using WebTakerData.Models.Api.Forms;
 
 namespace WebTakerData.Areas.Forms.Controllers
 {
-    [Route("[controller]/[action]")]
+  
     [Area("Forms")]
     public class FormsGeneratorController : BaseControllerAuthorize
     {

@@ -18,7 +18,7 @@ using WebTakerData.Utilities;
 
 namespace WebTakerData.Controllers
 {
-    [Route("[controller]/[action]")]
+  
     public class LoginController : Controller
     {
         private readonly IUsuarioProvider _usuarioProvider;
